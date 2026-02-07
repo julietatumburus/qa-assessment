@@ -1,11 +1,8 @@
 import LoginPage from '../support/pages/LoginPage'
 
 describe('Login', () => {
-  beforeEach(() => {
-    cy.visit('/')
-  })
-
   it('should show error for locked out user', () => {
+    cy.visit('/')
     cy.get(LoginPage.username).type('locked_out_user')
     cy.get(LoginPage.password).type('secret_sauce')
     cy.get(LoginPage.loginButton).click()
@@ -15,6 +12,7 @@ describe('Login', () => {
   })
 
   it('should login with valid credentials', () => {
+    cy.visit('/')
     cy.get(LoginPage.username).type('standard_user')
     cy.get(LoginPage.password).type('secret_sauce')
     cy.get(LoginPage.loginButton).click()
