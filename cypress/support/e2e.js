@@ -1,6 +1,7 @@
 import './commands'
 
 beforeEach(() => {
-  cy.clearCookies()
-  cy.clearLocalStorage()
+  cy.clearAllCookies()
+  cy.clearAllLocalStorage()
+  cy.clearAllSessionStorage()
 })
