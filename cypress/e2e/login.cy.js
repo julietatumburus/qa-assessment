@@ -20,6 +20,7 @@ describe('Login', () => {
     cy.get(LoginPage.loginButton).click()
 
     cy.get(LoginPage.error).should('contain', 'locked out')
+    cy.wait(50);
     cy.url().should('not.include', '/inventory')
   })
 })
